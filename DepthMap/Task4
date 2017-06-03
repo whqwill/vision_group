@@ -1,0 +1,13 @@
+How to write float buffer to .bin file
+
+void writeToBinary(const char* filename, const int width, const int
+height, float* dataC)
+{
+ofstream out(filename, ios::out | ios::binary);
+if(!out) {
+    cout << "Cannot open file.";
+   }
+
+   out.write((char *) dataC, sizeof(float)*width*height);
+   out.close();
+}

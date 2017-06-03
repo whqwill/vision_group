@@ -1,0 +1,17 @@
+
+this result is not ok yet, I can only see noise. For reference, I am
+attaching one reference image and corresponding disparity map (using
+my current algorithm) - as you can see, disp. map is not perfect, but
+at least it roughly resembles the correct depth. You should get
+similar results, even slightly better ones.
+
+So, check your code again, maybe some parameters are wrong, maybe
+there are some assumptions for input data that you didn't consider...
+
+By the way, I checked if the problem could be in rectification - but
+it is not. Kitti data is already rectified, so that must be fine.
+
+You can also try StereoBM first, for reference. Actually it would be
+good idea to do so, so you can see how much result improves when you
+use StereoSGBM method (the semi-global matching). I would be also
+interested to see the difference.

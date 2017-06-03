@@ -1,0 +1,36 @@
+One very important step in my pipeline is the computation of depth
+maps. This step assumes, that we have two cameras. Each camera is
+calibrated (i.e. we know its intrinsic/extrinsic parameters) and it
+captures image of the scene. From this information (two images, camera
+parameters), we want to compute depth image (also called depth map or
+disparity map).
+
+I already mentioned, I have implementation of an algorithm that
+computes depth maps. I would like to replace it with better (existing)
+one, called Semi-Global Matching by Heiko Hirscmueller. There are
+several implementations of it, for example, one is here
+http://lunokhod.org/?p=1403, but it is unofficial one. I just took
+10sec and typed "semi global mathcing code" to google, and this was
+the first hit :)
+
+First, I would like you to google for the implementations, also check,
+if algorithm is already avalible in OpenCV. The best would be to have
+implementation of the author (if he provides one). When you identify
+some implementations, check what kind of input it requires: image
+format, should image be rectified/unrectified, camera parameter
+format, etc., and note this down. The best would be to make list of
+implementations (I don't know how many are there, I guess 1-3),
+provide links, and some info (i.e. in which language is implemented,
+inputs format, ...). Also list external libraries that some
+implementation assumes.
+
+The second step would be to try to make it work on KITTI dataset
+(http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo).
+For that, you would have to compile the source code and potentially
+adapt the input data to fit the format assumed by the implementation.
+
+You don't really have to know how this algorithm works to do the task.
+However, I am sending you quick overview of the method (first
+document), I really recommend to read that. Second document is the
+paper from 2005, if you are interested, you can read it, but its not
+required for the task.
